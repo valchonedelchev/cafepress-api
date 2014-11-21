@@ -15,9 +15,13 @@
     
     my $api = Cafepress::Api->new(key=>$CPAPIKEY);
     
-    my $token = $api->call('authentication.getUserToken.cp',
-        email    => 'you@example.com',
-        password => 'P4ssW0r7')->{value}->{text};
+    my $token = $api->call(
+      'authentication.getUserToken.cp',
+      email    => 'you@example.com',
+      password => 'P4ssW0r7'
+      )->{value}->{text}
+      or die $api->error;
+
     
     print ' * ' . $_->{name} . $/
       foreach
