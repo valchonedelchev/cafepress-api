@@ -3,9 +3,8 @@ package Cafepress::Api;
 use Moose;
 use XML::Hash;
 use LWP::UserAgent;
-use Params::Validate;
 
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 has key => ( is => 'rw', isa => 'Str', required => 1 );
 
@@ -34,6 +33,9 @@ has api_base => (
 
 sub call {
   my ( $self, $method, %args ) = @_;
+
+  confess 'usage: $api->call("resource.method.cp")'
+    unless $method;
 
   my $url = sprintf( '%s/%s?v=%s&appKey=%s',
     $self->api_base, $method, $self->api_version, $self->key );
