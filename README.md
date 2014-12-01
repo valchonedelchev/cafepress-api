@@ -1,26 +1,42 @@
 # Cafepress API
 
+IMPORTANT: This is not an official cafepress software!
+
 [http://www.cafepress.co.uk/cp/developers/docs/index.aspx](http://www.cafepress.co.uk/cp/developers/docs/index.aspx)
 
-# Getting started
+# Installation instructions
+
+It is strongly recommened to use perlbrew or carton or any other Perl environment management tool.
+
+## cpanfile and cpanm installation
+
+Your  _cpanfile_ content:
+
+    requires 'git://github.com/valchonedelchev/cafepress-api.git';
+
+Invoking the cpanm tool:
+
+    cpanm --installdeps .
+
+# Getting started with API
 
 * Sign in or register a new account with Cafepress.com.
 * Get a new app key.
 * Build cool stuff. The Cafepress.com API puts a factory at your fingertips. 
 * Use with care and creativity.
 
-# Usage
+# Usage example
 
     use Cafepress::Api;
     
     my $api = Cafepress::Api->new(key=>$CPAPIKEY);
     
     my $token = $api->call(
-      'authentication.getUserToken.cp',
-      email    => 'you@example.com',
-      password => 'P4ssW0r7'
+        'authentication.getUserToken.cp',
+        'email'    => 'you@example.com',
+        'password' => 'P4ssW0r7'
       )->{value}->{text}
-      or die $api->error;
+    or die $api->error;
 
     
     print ' * ' . $_->{name} . $/
