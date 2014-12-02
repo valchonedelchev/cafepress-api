@@ -1,3 +1,6 @@
+0.04  2014-12-02
+  - Remove unit tetsts which are breaking installation
+
 0.03  2014-11-27
   - More unit tests
   - Make method argument mandatory for call()

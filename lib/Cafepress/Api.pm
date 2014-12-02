@@ -4,7 +4,7 @@ use Moose;
 use XML::Hash;
 use LWP::UserAgent;
 
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 
 has key => ( is => 'rw', isa => 'Str', required => 1 );
 
