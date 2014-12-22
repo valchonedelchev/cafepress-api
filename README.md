@@ -1,5 +1,7 @@
 # Cafepress API
 
+[![Build Status](https://api.travis-ci.org/valchonedelchev/cafepress-api.svg?branch=master)](https://github.com/valchonedelchev/cafepress-api)
+
 IMPORTANT: This is not an official cafepress software!
 
 [http://www.cafepress.co.uk/cp/developers/docs/index.aspx](http://www.cafepress.co.uk/cp/developers/docs/index.aspx)
